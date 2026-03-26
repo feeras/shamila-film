@@ -13,7 +13,7 @@
   --white-muted: rgba(245,240,232,0.35);
   --gold:     #C9A96E;
   --gold-l:   #E8C97E;
-  --font-s:   'Cormorant Garamond','Georgia',serif;
+  --font-s:   'Raleway',system-ui,sans-serif;
   --font-b:   'Inter',system-ui,sans-serif;
   --ease:     cubic-bezier(0.25,0.46,0.45,0.94);
   --ease-out: cubic-bezier(0.16,1,0.3,1);
@@ -63,9 +63,10 @@ button { cursor:none; }
 }
 .loader-name {
   font-family:var(--font-s);
-  font-size:clamp(1.8rem,5vw,3rem);
-  font-weight:300;
-  letter-spacing:0.3em;
+  font-size:clamp(1.4rem,4vw,2.2rem);
+  font-weight:200;
+  letter-spacing:0.45em;
+  text-transform:uppercase;
   color:var(--gold);
   display:block;
   opacity:0;
@@ -160,12 +161,13 @@ body:not(.cursor-ready) .cursor-dot { opacity:0; }
 }
 .section-title {
   font-family:var(--font-s);
-  font-size:clamp(2rem,5vw,3.5rem);
-  font-weight:300;
-  line-height:1.15;
+  font-size:clamp(1.9rem,4.5vw,3.2rem);
+  font-weight:200;
+  line-height:1.18;
+  letter-spacing:0.02em;
   margin-bottom:40px;
 }
-.section-title em { font-style:italic; color:var(--gold); }
+.section-title em { font-style:normal; font-weight:300; color:var(--gold); }
 
 /* ─── REVEAL ANIMATIONS ───────────────── */
 .reveal-clip {
@@ -238,9 +240,10 @@ body:not(.cursor-ready) .cursor-dot { opacity:0; }
 }
 .nav-logo {
   font-family:var(--font-s);
-  font-size:1.5rem;
-  font-weight:300;
-  letter-spacing:0.1em;
+  font-size:1.1rem;
+  font-weight:200;
+  letter-spacing:0.35em;
+  text-transform:uppercase;
 }
 .nav-logo span { color:var(--gold); }
 .nav-links { display:flex; align-items:center; gap:36px; list-style:none; }
@@ -376,12 +379,13 @@ body:not(.cursor-ready) .cursor-dot { opacity:0; }
 }
 .hero-title {
   font-family:var(--font-s);
-  font-size:clamp(4.5rem,13vw,10rem);
-  font-weight:300;
-  line-height:0.92;
+  font-size:clamp(3.8rem,10vw,8.5rem);
+  font-weight:200;
+  line-height:1.0;
+  letter-spacing:0.04em;
   margin-bottom:28px;
 }
-.hero-title .italic { font-style:italic; color:var(--gold-l); }
+.hero-title .italic { font-style:normal; font-weight:300; color:var(--gold-l); letter-spacing:0.08em; }
 .hero-sub {
   font-size:clamp(0.88rem,2vw,1rem);
   color:var(--white-dim);
@@ -571,21 +575,24 @@ body:not(.cursor-ready) .cursor-dot { opacity:0; }
 
 /* Film info */
 .film-year {
-  font-family:var(--font-s);
-  font-size:0.85rem;
+  font-family:var(--font-b);
+  font-size:0.7rem;
+  font-weight:400;
   color:var(--gold);
-  letter-spacing:0.1em;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
   display:block;
   margin-bottom:10px;
 }
 .film-title {
   font-family:var(--font-s);
-  font-size:clamp(1.6rem,3vw,2.4rem);
-  font-weight:300;
-  font-style:italic;
+  font-size:clamp(1.5rem,2.5vw,2.2rem);
+  font-weight:200;
+  font-style:normal;
+  letter-spacing:0.03em;
   color:var(--white);
   margin-bottom:16px;
-  line-height:1.2;
+  line-height:1.25;
   transition:color 0.3s;
 }
 .film-card:hover .film-title { color:var(--gold-l); }
@@ -657,8 +664,9 @@ body:not(.cursor-ready) .cursor-dot { opacity:0; }
 .fact-num {
   display:block;
   font-family:var(--font-s);
-  font-size:2.8rem;
-  font-weight:300;
+  font-size:2.6rem;
+  font-weight:200;
+  letter-spacing:0.04em;
   color:var(--gold);
   line-height:1;
   margin-bottom:6px;
@@ -674,7 +682,6 @@ body:not(.cursor-ready) .cursor-dot { opacity:0; }
 .vision-section {
   position:relative;
   padding:160px 0;
-  text-align:center;
 }
 .vision-bg { position:absolute; inset:0; }
 .vision-bg img { width:100%; height:100%; object-fit:cover; filter:grayscale(50%); }
@@ -682,13 +689,18 @@ body:not(.cursor-ready) .cursor-dot { opacity:0; }
 .vision-section .container { position:relative; z-index:2; max-width:900px; }
 .vision-quote {
   font-family:var(--font-s);
-  font-size:clamp(1.4rem,3.5vw,2.4rem);
-  font-weight:300;
-  font-style:italic;
+  font-size:clamp(1.3rem,3vw,2.1rem);
+  font-weight:200;
+  font-style:normal;
+  letter-spacing:0.02em;
   color:var(--white);
-  line-height:1.55;
+  line-height:1.65;
   margin:0 0 20px;
   quotes:none;
+  border-left:2px solid var(--gold);
+  padding-left:28px;
+  text-align:left;
+  max-width:780px;
 }
 .vision-sub {
   font-size:0.75rem;
@@ -696,6 +708,8 @@ body:not(.cursor-ready) .cursor-dot { opacity:0; }
   color:var(--gold);
   text-transform:uppercase;
   margin-bottom:80px;
+  padding-left:30px;
+  text-align:left;
 }
 .vision-pillars {
   display:grid;
@@ -718,8 +732,10 @@ body:not(.cursor-ready) .cursor-dot { opacity:0; }
 .pillar-icon { font-size:1.8rem; display:block; margin-bottom:16px; }
 .pillar h4 {
   font-family:var(--font-s);
-  font-size:1.3rem;
-  font-weight:400;
+  font-size:1.15rem;
+  font-weight:300;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
   color:var(--gold);
   margin-bottom:10px;
 }
@@ -742,10 +758,12 @@ body:not(.cursor-ready) .cursor-dot { opacity:0; }
 .press-quote:hover { transform:translateY(-6px); background:#161616; }
 .press-quote p {
   font-family:var(--font-s);
-  font-size:1.05rem;
-  font-style:italic;
+  font-size:0.95rem;
+  font-style:normal;
+  font-weight:300;
+  letter-spacing:0.01em;
   color:var(--white-dim);
-  line-height:1.75;
+  line-height:1.8;
   margin-bottom:16px;
 }
 .press-quote cite {
@@ -766,10 +784,12 @@ body:not(.cursor-ready) .cursor-dot { opacity:0; }
 }
 .press-logo {
   font-family:var(--font-s);
-  font-size:1.1rem;
-  font-style:italic;
+  font-size:0.85rem;
+  font-style:normal;
+  font-weight:300;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
   color:var(--white-muted);
-  letter-spacing:0.06em;
   transition:color 0.3s, transform 0.3s;
 }
 .press-logo:hover { color:var(--white); transform:translateY(-2px); }
@@ -848,7 +868,7 @@ body:not(.cursor-ready) .cursor-dot { opacity:0; }
   gap:16px;
   flex-wrap:wrap;
 }
-.footer-logo { font-family:var(--font-s); font-size:1.4rem; }
+.footer-logo { font-family:var(--font-s); font-size:1rem; font-weight:200; letter-spacing:0.35em; text-transform:uppercase; }
 .footer-logo span { color:var(--gold); }
 .footer-copy { font-size:0.75rem; color:var(--white-muted); }
 .footer-links { display:flex; gap:24px; }
