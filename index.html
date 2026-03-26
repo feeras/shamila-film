@@ -12,6 +12,26 @@
 </head>
 <body>
 
+  <!-- PAGE LOADER -->
+  <div id="loader" class="loader">
+    <div class="loader-bar loader-bar--top"></div>
+    <div class="loader-bar loader-bar--bottom"></div>
+    <div class="loader-content">
+      <span class="loader-name">Shamila Nazari</span>
+      <div class="loader-line"></div>
+    </div>
+  </div>
+
+  <!-- CUSTOM CURSOR -->
+  <div id="cursor" class="cursor"></div>
+  <div id="cursorDot" class="cursor-dot"></div>
+
+  <!-- SCROLL PROGRESS -->
+  <div id="scrollProgress" class="scroll-progress"></div>
+
+  <!-- FILM GRAIN OVERLAY -->
+  <div class="grain-overlay" aria-hidden="true"></div>
+
   <!-- NAV -->
   <nav id="nav">
     <a href="#home" class="nav-logo">S<span>·</span>N</a>
@@ -19,11 +39,11 @@
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#films">Filme</a></li>
-      <li><a href="#about">Über mich</a></li>
-      <li><a href="#vision">Vision</a></li>
-      <li><a href="#presse">Presse</a></li>
-      <li><a href="#kontakt" class="nav-cta">Kontakt</a></li>
+      <li><a href="#films" class="nav-link-item">Filme</a></li>
+      <li><a href="#about" class="nav-link-item">Über mich</a></li>
+      <li><a href="#vision" class="nav-link-item">Vision</a></li>
+      <li><a href="#presse" class="nav-link-item">Presse</a></li>
+      <li><a href="#kontakt" class="nav-cta magnetic">Kontakt</a></li>
     </ul>
   </nav>
 
@@ -33,47 +53,48 @@
   <!-- HERO -->
   <section id="home" class="hero">
     <div class="hero-bg">
-      <img src="images/hero.jpg" alt="Film Set" class="hero-img" />
+      <img src="images/hero.jpg" alt="Film Set" class="hero-img" id="heroImg" />
       <div class="hero-overlay"></div>
     </div>
     <div class="hero-content">
-      <p class="hero-eyebrow reveal">Filmregisseurin · Zürich</p>
-      <h1 class="hero-title reveal">
-        <span class="title-line">Shamila</span>
-        <span class="title-line italic">Nazari</span>
+      <p class="hero-eyebrow reveal-clip">Filmregisseurin · Zürich</p>
+      <h1 class="hero-title">
+        <span class="title-line split-text" data-text="Shamila">Shamila</span>
+        <span class="title-line split-text italic" data-text="Nazari">Nazari</span>
       </h1>
-      <p class="hero-sub reveal">Preisgekrönte Geschichten. Unbequeme Wahrheiten.<br>Von Zürich bis Locarno.</p>
-      <div class="hero-actions reveal">
-        <a href="#films" class="btn btn-primary">Filmografie</a>
-        <a href="#kontakt" class="btn btn-ghost">Zusammenarbeit</a>
+      <p class="hero-sub reveal-fade">Preisgekrönte Geschichten. Unbequeme Wahrheiten.<br>Von Zürich bis Locarno.</p>
+      <div class="hero-actions reveal-fade">
+        <a href="#films" class="btn btn-primary magnetic">Filmografie</a>
+        <a href="#kontakt" class="btn btn-ghost magnetic">Zusammenarbeit</a>
       </div>
     </div>
     <div class="hero-scroll">
-      <span></span>
+      <span class="scroll-line"></span>
+      <span class="scroll-text">Scroll</span>
     </div>
   </section>
 
   <!-- AWARDS BAR -->
   <section class="awards-bar">
-    <div class="awards-inner">
-      <div class="award-item">
-        <span class="award-icon">🏆</span>
-        <span>Locarno Film Festival 2023</span>
-      </div>
-      <div class="award-sep">·</div>
-      <div class="award-item">
-        <span class="award-icon">🎬</span>
-        <span>Swiss Film Prize – Nominiert</span>
-      </div>
-      <div class="award-sep">·</div>
-      <div class="award-item">
-        <span class="award-icon">🌍</span>
-        <span>Berlinale 2022 – Offizieller Beitrag</span>
-      </div>
-      <div class="award-sep">·</div>
-      <div class="award-item">
-        <span class="award-icon">🎭</span>
-        <span>ZHdK Absolventenwerkschau – Hauptpreis 2017</span>
+    <div class="marquee-track">
+      <div class="marquee-content">
+        <span class="award-item"><span class="award-icon">🏆</span> Locarno Film Festival 2023</span>
+        <span class="award-sep">·</span>
+        <span class="award-item"><span class="award-icon">🎬</span> Swiss Film Prize – Nominiert</span>
+        <span class="award-sep">·</span>
+        <span class="award-item"><span class="award-icon">🌍</span> Berlinale 2022 – Offizieller Beitrag</span>
+        <span class="award-sep">·</span>
+        <span class="award-item"><span class="award-icon">🎭</span> ZHdK Absolventenwerkschau – Hauptpreis</span>
+        <span class="award-sep">·</span>
+        <!-- duplicate for seamless loop -->
+        <span class="award-item"><span class="award-icon">🏆</span> Locarno Film Festival 2023</span>
+        <span class="award-sep">·</span>
+        <span class="award-item"><span class="award-icon">🎬</span> Swiss Film Prize – Nominiert</span>
+        <span class="award-sep">·</span>
+        <span class="award-item"><span class="award-icon">🌍</span> Berlinale 2022 – Offizieller Beitrag</span>
+        <span class="award-sep">·</span>
+        <span class="award-item"><span class="award-icon">🎭</span> ZHdK Absolventenwerkschau – Hauptpreis</span>
+        <span class="award-sep">·</span>
       </div>
     </div>
   </section>
@@ -81,15 +102,30 @@
   <!-- FILME -->
   <section id="films" class="films-section">
     <div class="container">
-      <div class="section-label reveal">Filmografie</div>
-      <h2 class="section-title reveal">Ausgewählte Werke</h2>
+      <div class="section-label reveal-clip">Filmografie</div>
+      <h2 class="section-title reveal-slide">Ausgewählte <em>Werke</em></h2>
 
       <div class="films-grid">
 
         <!-- Film 1 -->
-        <article class="film-card reveal" data-year="2023">
+        <article class="film-card reveal-slide" data-year="2023">
           <div class="film-thumb">
-            <img src="images/film1.jpg" alt="Die Stille danach" />
+            <img src="images/film1.jpg" alt="Die Stille danach" class="film-img" />
+            <!-- VIDEO PREVIEW -->
+            <div class="film-video-wrapper">
+              <video class="film-video" src="video/film1.mp4"
+                muted loop playsinline preload="none">
+              </video>
+              <div class="film-video-bars">
+                <div class="bar bar--top"></div>
+                <div class="bar bar--bottom"></div>
+              </div>
+              <div class="film-video-overlay">
+                <div class="play-ring">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+              </div>
+            </div>
             <div class="film-overlay">
               <span class="film-tag">Spielfilm</span>
             </div>
@@ -99,19 +135,29 @@
             <h3 class="film-title">Die Stille danach</h3>
             <p class="film-desc">Eine Frau kehrt nach 20 Jahren in ihr Heimatdorf zurück — und trifft auf das Schweigen derer, die wussten. Ein düsteres Kammerspiel über kollektive Schuld und das Gewicht ungesagter Wahrheiten.</p>
             <div class="film-meta">
-              <span>94 min</span>
-              <span>·</span>
-              <span>DE / TR</span>
-              <span>·</span>
-              <span>Locarno 2023</span>
+              <span>94 min</span><span>·</span><span>DE / TR</span><span>·</span><span>Locarno 2023</span>
             </div>
           </div>
         </article>
 
         <!-- Film 2 -->
-        <article class="film-card reveal" data-year="2021">
+        <article class="film-card reveal-slide" data-year="2021">
           <div class="film-thumb">
-            <img src="images/film2.jpg" alt="Zwischenwelten" />
+            <img src="images/film2.jpg" alt="Zwischenwelten" class="film-img" />
+            <div class="film-video-wrapper">
+              <video class="film-video" src="video/film2.mp4"
+                muted loop playsinline preload="none">
+              </video>
+              <div class="film-video-bars">
+                <div class="bar bar--top"></div>
+                <div class="bar bar--bottom"></div>
+              </div>
+              <div class="film-video-overlay">
+                <div class="play-ring">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+              </div>
+            </div>
             <div class="film-overlay">
               <span class="film-tag">Dokumentarfilm</span>
             </div>
@@ -121,19 +167,29 @@
             <h3 class="film-title">Zwischenwelten</h3>
             <p class="film-desc">Drei Frauen. Drei Kontinente. Eine Frage: Wo beginnt Heimat? Shamila Nazaris erster Dokumentarfilm folgt Protagonist:innen zwischen Kabul, Istanbul und Zürich über drei Jahre.</p>
             <div class="film-meta">
-              <span>78 min</span>
-              <span>·</span>
-              <span>DE / FA / TR</span>
-              <span>·</span>
-              <span>Berlinale 2022</span>
+              <span>78 min</span><span>·</span><span>DE / FA / TR</span><span>·</span><span>Berlinale 2022</span>
             </div>
           </div>
         </article>
 
         <!-- Film 3 -->
-        <article class="film-card reveal" data-year="2019">
+        <article class="film-card reveal-slide" data-year="2019">
           <div class="film-thumb">
-            <img src="images/film3.jpg" alt="Im Schatten des Granats" />
+            <img src="images/film3.jpg" alt="Im Schatten des Granats" class="film-img" />
+            <div class="film-video-wrapper">
+              <video class="film-video" src="video/film3.mp4"
+                muted loop playsinline preload="none">
+              </video>
+              <div class="film-video-bars">
+                <div class="bar bar--top"></div>
+                <div class="bar bar--bottom"></div>
+              </div>
+              <div class="film-video-overlay">
+                <div class="play-ring">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+              </div>
+            </div>
             <div class="film-overlay">
               <span class="film-tag">Kurzfilm</span>
             </div>
@@ -143,11 +199,7 @@
             <h3 class="film-title">Im Schatten des Granats</h3>
             <p class="film-desc">Ihr Abschlussfilm an der ZHdK — ein poetischer Kurzfilm über Erinnerung und Verlust. Gewann den Hauptpreis der Absolventenwerkschau und wurde in 14 Ländern gezeigt.</p>
             <div class="film-meta">
-              <span>22 min</span>
-              <span>·</span>
-              <span>FA / DE</span>
-              <span>·</span>
-              <span>ZHdK Preis 2019</span>
+              <span>22 min</span><span>·</span><span>FA / DE</span><span>·</span><span>ZHdK Preis 2019</span>
             </div>
           </div>
         </article>
@@ -159,31 +211,34 @@
   <!-- ABOUT -->
   <section id="about" class="about-section">
     <div class="container about-grid">
-      <div class="about-image reveal">
-        <img src="images/shamila.jpg" alt="Shamila Nazari" />
+      <div class="about-image reveal-slide">
+        <div class="about-img-frame">
+          <img src="images/shamila.jpg" alt="Shamila Nazari" />
+          <div class="about-img-line"></div>
+        </div>
         <div class="about-img-caption">© Jonas Frei / 2023</div>
       </div>
       <div class="about-text">
-        <div class="section-label reveal">Über mich</div>
-        <h2 class="section-title reveal">Zwischen zwei<br><em>Welten erzählen</em></h2>
-        <p class="reveal">Ich bin 1991 in Kabul geboren und mit sechs Jahren in die Schweiz gekommen. Diese Erfahrung — das Leben zwischen Kulturen, Sprachen und Identitäten — ist das Fundament meiner Arbeit.</p>
-        <p class="reveal">Nach meinem Filmstudium an der Zürcher Hochschule der Künste (ZHdK) habe ich Spielfilme, Dokumentarfilme und Kurzfilme realisiert. Meine Geschichten handeln von Menschen an Grenzen — geographische, emotionale, gesellschaftliche.</p>
-        <p class="reveal">Ich lebe und arbeite in Zürich. Neben der Regie unterrichte ich Filmnarration an der ZHdK und bin Mentorin für aufstrebende Filmschaffende mit Migrationshintergrund.</p>
-        <div class="about-facts reveal">
+        <div class="section-label reveal-clip">Über mich</div>
+        <h2 class="section-title reveal-slide">Zwischen zwei<br><em>Welten erzählen</em></h2>
+        <p class="reveal-fade">Ich bin 1991 in Kabul geboren und mit sechs Jahren in die Schweiz gekommen. Diese Erfahrung — das Leben zwischen Kulturen, Sprachen und Identitäten — ist das Fundament meiner Arbeit.</p>
+        <p class="reveal-fade">Nach meinem Filmstudium an der Zürcher Hochschule der Künste (ZHdK) habe ich Spielfilme, Dokumentarfilme und Kurzfilme realisiert. Meine Geschichten handeln von Menschen an Grenzen.</p>
+        <p class="reveal-fade">Ich lebe und arbeite in Zürich. Neben der Regie unterrichte ich Filmnarration an der ZHdK und bin Mentorin für aufstrebende Filmschaffende mit Migrationshintergrund.</p>
+        <div class="about-facts reveal-fade">
           <div class="fact">
-            <span class="fact-num">3</span>
+            <span class="fact-num counter" data-target="3">0</span>
             <span class="fact-label">Langfilme</span>
           </div>
           <div class="fact">
-            <span class="fact-num">14</span>
+            <span class="fact-num counter" data-target="14">0</span>
             <span class="fact-label">Länder</span>
           </div>
           <div class="fact">
-            <span class="fact-num">7</span>
+            <span class="fact-num counter" data-target="7">0</span>
             <span class="fact-label">Auszeichnungen</span>
           </div>
           <div class="fact">
-            <span class="fact-num">12+</span>
+            <span class="fact-num counter" data-target="12" data-suffix="+">0</span>
             <span class="fact-label">Jahre Regie</span>
           </div>
         </div>
@@ -198,24 +253,24 @@
       <div class="vision-overlay"></div>
     </div>
     <div class="container">
-      <div class="section-label reveal" style="color: var(--gold)">Meine Vision</div>
-      <blockquote class="vision-quote reveal">
+      <div class="section-label reveal-clip" style="color:var(--gold)">Meine Vision</div>
+      <blockquote class="vision-quote reveal-slide">
         „Film ist nicht Unterhaltung. Film ist das Einzige, das uns zwingt, in der Haut eines anderen Menschen zu sitzen — für 90 Minuten ohne Fluchtweg."
       </blockquote>
-      <p class="vision-sub reveal">— Shamila Nazari</p>
+      <p class="vision-sub reveal-fade">— Shamila Nazari</p>
 
-      <div class="vision-pillars reveal">
-        <div class="pillar">
+      <div class="vision-pillars">
+        <div class="pillar reveal-slide">
           <span class="pillar-icon">🎞</span>
           <h4>Authentizität</h4>
           <p>Keine Hochglanz-Fantasien. Ich arbeite mit echten Menschen, echten Orten, echten Emotionen — auch wenn es unbequem wird.</p>
         </div>
-        <div class="pillar">
+        <div class="pillar reveal-slide">
           <span class="pillar-icon">🌐</span>
           <h4>Mehrsprachigkeit</h4>
           <p>Meine Filme entstehen in verschiedenen Sprachen. Sprache ist nicht Barriere — sie ist Charakter, Herkunft, Widerstand.</p>
         </div>
-        <div class="pillar">
+        <div class="pillar reveal-slide">
           <span class="pillar-icon">👁</span>
           <h4>Weibliche Perspektive</h4>
           <p>Ich erzähle Geschichten, die die Welt zu oft vergessen hat. Protagonistinnen, die keine Opfer sind, sondern Kräfte.</p>
@@ -227,25 +282,25 @@
   <!-- PRESSE -->
   <section id="presse" class="presse-section">
     <div class="container">
-      <div class="section-label reveal">Presse</div>
-      <h2 class="section-title reveal">Was man über<br>meine Arbeit sagt</h2>
+      <div class="section-label reveal-clip">Presse</div>
+      <h2 class="section-title reveal-slide">Was man über<br><em>meine Arbeit sagt</em></h2>
 
       <div class="quotes-grid">
-        <div class="press-quote reveal">
+        <div class="press-quote reveal-slide">
           <p>„Nazari hat ein seltenes Gespür für den emotionalen Kern einer Szene. ‹Die Stille danach› ist das wichtigste Schweizer Kino des Jahrzehnts."</p>
           <cite>— NZZ, Oktober 2023</cite>
         </div>
-        <div class="press-quote reveal">
+        <div class="press-quote reveal-slide">
           <p>„Eine Filmemacherin, die kompromisslos ist — und gerade deshalb so zwingend. Wir werden noch viel von ihr hören."</p>
           <cite>— Tages-Anzeiger, 2022</cite>
         </div>
-        <div class="press-quote reveal">
+        <div class="press-quote reveal-slide">
           <p>„‹Zwischenwelten› ist ein Meisterstück des Schweizer Dokumentarfilms. Bewegend, präzise, notwendig."</p>
-          <cite>— Neue Zürcher Zeitung am Sonntag</cite>
+          <cite>— NZZ am Sonntag</cite>
         </div>
       </div>
 
-      <div class="logos-row reveal">
+      <div class="logos-row reveal-fade">
         <span class="press-logo">NZZ</span>
         <span class="press-logo">Tages-Anzeiger</span>
         <span class="press-logo">SRF Kultur</span>
@@ -260,23 +315,23 @@
   <section id="kontakt" class="kontakt-section">
     <div class="container kontakt-grid">
       <div class="kontakt-text">
-        <div class="section-label reveal" style="color: var(--gold)">Kontakt</div>
-        <h2 class="section-title reveal">Lass uns<br><em>zusammenarbeiten</em></h2>
-        <p class="reveal">Ob Koproduktion, Workshops, Keynotes oder Mediengespräche — ich freue mich über Anfragen.</p>
-        <div class="kontakt-details reveal">
-          <a href="mailto:kontakt@shamilanazari.com" class="kontakt-link">
+        <div class="section-label reveal-clip" style="color:var(--gold)">Kontakt</div>
+        <h2 class="section-title reveal-slide">Lass uns<br><em>zusammenarbeiten</em></h2>
+        <p class="reveal-fade">Ob Koproduktion, Workshops, Keynotes oder Mediengespräche — ich freue mich über Anfragen.</p>
+        <div class="kontakt-details reveal-fade">
+          <a href="mailto:kontakt@shamilanazari.com" class="kontakt-link magnetic">
             <span>📧</span> kontakt@shamilanazari.com
           </a>
-          <a href="https://instagram.com" class="kontakt-link" target="_blank">
+          <a href="https://instagram.com" class="kontakt-link magnetic" target="_blank">
             <span>📷</span> @shamila.nazari
           </a>
-          <a href="https://vimeo.com" class="kontakt-link" target="_blank">
+          <a href="https://vimeo.com" class="kontakt-link magnetic" target="_blank">
             <span>🎬</span> Vimeo Portfolio
           </a>
         </div>
-        <p class="kontakt-note reveal">Vertretung & Booking: <strong>Claudia Hofer, FilmFactory Zürich</strong><br>c.hofer@filmfactory.ch · +41 44 300 11 22</p>
+        <p class="kontakt-note reveal-fade">Vertretung & Booking: <strong>Claudia Hofer, FilmFactory Zürich</strong><br>c.hofer@filmfactory.ch · +41 44 300 11 22</p>
       </div>
-      <form class="kontakt-form reveal" id="kontaktForm">
+      <form class="kontakt-form reveal-slide" id="kontaktForm">
         <div class="form-group">
           <input type="text" placeholder="Dein Name" required />
         </div>
@@ -296,7 +351,7 @@
         <div class="form-group">
           <textarea placeholder="Deine Nachricht…" rows="5" required></textarea>
         </div>
-        <button type="submit" class="btn btn-primary btn-full">Nachricht senden</button>
+        <button type="submit" class="btn btn-primary btn-full magnetic">Nachricht senden</button>
         <p class="form-note">Ich antworte in der Regel innerhalb von 48 Stunden.</p>
       </form>
     </div>
